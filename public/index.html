@@ -10,9 +10,9 @@
 
     <div id="app">
       <h1>COUNTRIES</h1>
-      <h2>Total populations: {{ globalPop() }}</h2>
-      <select class="" name="">
-
+      <h2>Total populations: {{ globalPop }}</h2>
+      <select  v-model="selectedCountry" >
+        <option :value="index" v-for="(country, index) in this.countries">{{country.name}}</option>
       </select>
 
 
