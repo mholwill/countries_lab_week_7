@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Fav Countries</title>
     <script type="text/javascript" src="./js/bundle.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
   </head>
   <body>
@@ -11,7 +12,7 @@
     <div id="app">
       <h1>COUNTRIES</h1>
       <h2>Total populations: {{ globalPop }}</h2>
-      <select  v-model="countryIndex" >
+      <select class="selector" v-model="countryIndex" >
         <option :value="index" v-for="(country, index) in this.countries">{{country.name}}</option>
       </select>
 
@@ -23,11 +24,15 @@
         <button v-on:click="addToFavourites">Add to Favourites</button>
       </div>
 
+      <h2 class="favCountryTitle">FAVOURITE COUNTRIES</h2>
       <section>
         <div class="favcountries" v-for="country in favouriteCountries">
-          <!-- <h3>{{country.name}}</h3> -->
-          <img :src="country.flag">
-
+          <div class="container">
+            <img :src="country.flag">
+              <div class="overlay">
+                <div class="text">{{country.name}}</div>
+              </div>
+          </div>
         </div>
       </section>
 
