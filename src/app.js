@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () =>{
     data:{
       countries: [],
       countryIndex: null,
-      // selectedCountry: this.countries[countryIndex]
+      favouriteCountries: []
     },
     mounted(){
       this.fetchCountries()
@@ -16,6 +16,11 @@ document.addEventListener('DOMContentLoaded', () =>{
         const resquest = fetch("https://restcountries.eu/rest/v2/all")
         .then(response => response.json())
         .then(data => this.countries = data)
+      },
+      addToFavourites:function () {
+        if (!this.favouriteCountries.includes(this.selectedCountry)) {
+          this.favouriteCountries.push(this.selectedCountry)
+        }
       }
     },
     computed: {
@@ -24,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () =>{
           return total += country.population
         },0)
       },
-      selectedCountry: function () {    return this.countries[this.countryIndex]
+      selectedCountry: function () {
+        return this.countries[this.countryIndex]
       }
     }
   })

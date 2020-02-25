@@ -20,7 +20,16 @@
         <h2>{{selectedCountry.capital}}</h2>
         <h2>Population: {{selectedCountry.population}}</h2>
         <img :src="selectedCountry.flag">
+        <button v-on:click="addToFavourites">Add to Favourites</button>
       </div>
+
+      <section>
+        <div class="favcountries" v-for="country in favouriteCountries">
+          <!-- <h3>{{country.name}}</h3> -->
+          <img :src="country.flag">
+
+        </div>
+      </section>
 
     </div>
   </body>
