@@ -1,8 +1,11 @@
 body {
-  height: 100%
+  height: 100%;
   width: 100%;
   font-family: 'Raleway';
-  background: url("https://commons.wikimedia.org/wiki/File:Spinning_globe.gif")
+  background-image: url("../images/earth-32b.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
 }
 
 img {
@@ -12,22 +15,32 @@ img {
 
 h1, h2 {
   text-align: center;
+  color: white;
+  text-transform: capitalize;
+  text-shadow: 2px 2px black;
 }
 
-.selector {
+option {
   display: flex;
-  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .display-container {
   display: flex;
-  background-color: lightgrey;
+  background-color: darkgrey;
   justify-content: center;
   flex-direction: column;
   border: solid 1px;
   width: 50%;
   margin: 20px auto;
   padding: 10px
+}
+
+.display-container img {
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
 }
 
 section {
@@ -41,7 +54,7 @@ section {
 section img{
   height: 100%;
   width: auto;
-  margin: 5px;
+  margin-left: 10px;
   border: 1px solid black;
 }
 
