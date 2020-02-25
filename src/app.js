@@ -5,7 +5,8 @@ document.addEventListener('DOMContentLoaded', () =>{
     el: '#app',
     data:{
       countries: [],
-      selectedCountry: ""
+      countryIndex: null,
+      // selectedCountry: this.countries[countryIndex]
     },
     mounted(){
       this.fetchCountries()
@@ -22,8 +23,9 @@ document.addEventListener('DOMContentLoaded', () =>{
         return this.countries.reduce((total, country) => {
           return total += country.population
         },0)
+      },
+      selectedCountry: function () {    return this.countries[this.countryIndex]
       }
     }
-
   })
 })

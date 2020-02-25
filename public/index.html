@@ -11,12 +11,17 @@
     <div id="app">
       <h1>COUNTRIES</h1>
       <h2>Total populations: {{ globalPop }}</h2>
-      <select  v-model="selectedCountry" >
+      <select  v-model="countryIndex" >
         <option :value="index" v-for="(country, index) in this.countries">{{country.name}}</option>
       </select>
 
+      <div class="display-container" v-if="countryIndex != null">
+        <h1>{{selectedCountry.name}}</h1>
+        <h2>{{selectedCountry.capital}}</h2>
+        <h2>Population: {{selectedCountry.population}}</h2>
+        <img :src="selectedCountry.flag">
+      </div>
 
     </div>
-
   </body>
 </html>
